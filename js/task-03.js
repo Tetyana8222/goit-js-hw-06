@@ -14,14 +14,14 @@ const images = [
 ];
 
 const list = document.querySelector(".gallery");
-const item = images
+const itemEl = images
   .map(
     (image) =>
       `<li class="js-gallery__card"><img class="js-gallery__pic" src="${image.url} alt="${image.alt}"></li>`
   )
   .join("");
 
-list.insertAdjacentHTML("beforeend", item);
+list.insertAdjacentHTML("beforeend", itemEl);
 
 //спосіб №2 через деструктирізацію
 // const list = document.querySelector(".gallery");

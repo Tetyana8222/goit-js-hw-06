@@ -1,8 +1,15 @@
-const validationInput = document.querySelector("#validation-input");
+refs = {
+  validationInput: document.querySelector("#validation-input"),
+  lengthNumber: Number(input.dataset.length),
+};
+refs.validationInput.addEventListener("blur", checkLengthNumberFunction);
 
-// validationInput.addEventListener("focus", () => {
-//   if (validationInput) textInput.value = "This input has focus";
-// });
-function multiply(x, y, z) {
-  console.log(`Результат множення дорівнює ${x * y * z}`);
+function checkLengthNumberFunction(event) {
+  if (event.currentTarget.value.length === refs.lengthNumber) {
+    refs.validationInput.classList.remove("invalid");
+    refs.validationInput.classList.add("valid");
+  } else {
+    refs.validationInput.classList.remove("valid");
+    refs.validationInput.classList.add("invalid");
+  }
 }
