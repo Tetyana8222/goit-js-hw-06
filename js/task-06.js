@@ -1,15 +1,13 @@
-refs = {
-  validationInput: document.querySelector("#validation-input"),
-  lengthNumber: Number(input.dataset.length),
-};
-refs.validationInput.addEventListener("blur", checkLengthNumberFunction);
+const validInput = document.querySelector("#validation-input");
+const lengthNumber = Number(validInput.getAttribute("data-length"));
 
 function checkLengthNumberFunction(event) {
-  if (event.currentTarget.value.length === refs.lengthNumber) {
-    refs.validationInput.classList.remove("invalid");
-    refs.validationInput.classList.add("valid");
+  if (event.currentTarget.value.length === lengthNumber) {
+    validInput.classList.remove("invalid");
+    validInput.classList.add("valid");
   } else {
-    refs.validationInput.classList.remove("valid");
-    refs.validationInput.classList.add("invalid");
+    validInput.classList.remove("valid");
+    validInput.classList.add("invalid");
   }
 }
+validInput.addEventListener("blur", checkLengthNumberFunction);
