@@ -13,13 +13,16 @@ btnDestroyEl.addEventListener("click", destroyBoxes);
 
 const createBoxes = (amount) => {
   let size = 30;
-  const divArray = [];
-  for (let i = 0; i <= amount; i += 1) {
+  const divBox = [];
+  for (let i = 0; i <= 100; i += 1) {
     size += 10;
-    return divArray.push(div);
+    boxesEl.push(div);
   }
+  let currentColor = getRandomHexColor();
+  div.style.backgroundColor = currentColor;
 };
 
 const destroyBoxes = () => {
   boxesEl.innerHTML = "";
+  inputEl.value = "";
 };
